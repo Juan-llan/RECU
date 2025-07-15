@@ -1,0 +1,100 @@
+/* ActivityList styles */
+.activity-list {
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.activity-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.activity-list-item:last-child {
+  border-bottom: none;
+}
+.activity-list-desc {
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+.activity-list-date {
+  font-size: 0.97rem;
+  color: #64748b;
+}
+.activity-list-type {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: #2563eb;
+  background: #e0e7ff;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.activity-list-delete {
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 0.97rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.activity-list-delete:hover {
+  color: #b91c1c;
+}
+.activity-list-horizontal-wrapper {
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin: 2rem auto 0 auto;
+  max-width: 100vw;
+}
+.activity-list-horizontal {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0 1rem;
+  margin: 0;
+}
+.activity-list-horizontal-item {
+  min-width: 260px;
+  max-width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+  position: relative;
+}
+.activity-list-horizontal-content {
+  width: 100%;
+}
+.activity-list-empty {
+  text-align: center;
+  color: #64748b;
+  margin-top: 2rem;
+}
+@media (max-width: 600px) {
+  .activity-list {
+    max-width: 98vw;
+  }
+  .activity-list-item {
+    padding: 0.7rem 0.5rem;
+  }
+  .activity-list-horizontal-item {
+    min-width: 180px;
+    max-width: 220px;
+    padding: 0.7rem 0.5rem;
+  }
+  .activity-list-horizontal {
+    gap: 0.7rem;
+    padding: 0 0.3rem;
+  }
+}
