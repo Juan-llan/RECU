@@ -40,6 +40,16 @@ const App = () => {
     setActivities((prev) => prev.filter((a) => a.id !== id));
   };
 
+  const handleEditActivity = (id, newDesc, newType) => {
+    setActivities((prev) => prev.map(a => a.id === id ? { ...a, description: newDesc, type: newType } : a));
+  };
+
+  const handleImportActivities = (imported) => {
+    if (window.confirm("¿Reemplazar todas las actividades actuales por las importadas?")) {
+      setActivities(imported);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
@@ -55,6 +65,8 @@ const App = () => {
               <ActivityList
                 activities={activities}
                 onDeleteActivity={handleDeleteActivity}
+                onEditActivity={handleEditActivity}
+                onImportActivities={handleImportActivities}
               />
             }
           />
