@@ -7,6 +7,13 @@ const ActivityList = ({ activities, onDeleteActivity }) => {
     );
   }
 
+  // Confirmación antes de eliminar
+  const handleDelete = (id) => {
+    if (window.confirm("¿Seguro que quieres eliminar esta actividad?")) {
+      onDeleteActivity(id);
+    }
+  };
+
   return (
     <div className="activity-list-horizontal-wrapper">
       <ul className="activity-list-horizontal">
@@ -28,7 +35,7 @@ const ActivityList = ({ activities, onDeleteActivity }) => {
               )}
             </div>
             <button
-              onClick={() => onDeleteActivity(activity.id)}
+              onClick={() => handleDelete(activity.id)}
               className="activity-list-delete"
             >
               Eliminar
